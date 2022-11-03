@@ -3,6 +3,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            changeImg: 0,
             items: [
                 {
                     url: 'http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg',
@@ -32,4 +33,15 @@ createApp({
             ]
         }
     },
+    methods: {
+        // changeImg(index){
+        //     this.changeImg = index;
+        // },
+
+        nextPrev(isNext) {
+            isNext ? this.changeImg++ : this.changeImg--
+        }
+    }
+
+
 }).mount('#app');

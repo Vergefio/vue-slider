@@ -37,30 +37,30 @@
                                     <!-- immagini -->
                                     <div class="my-carousel-item">
                                         <img class="img-fluid"
-                                            :src="{{items[0].url}}"
+                                            :src="items[changeImg].url"
                                             alt="... picture">
                                         <div class="item-description px-3">
                                             <h2>{{items[0].title}}</h2>
-                                            <p>{{description}}p>
+                                            <p>{{description}}<p>
                                         </div>
                                     </div>
                                     <!-- /immagini -->
                                 </div>
                                 <div class="my-thumbnails position-relative">
                                     <!-- prev -->
-                                    <div class="my-previous position-absolute">
+                                    <div class="my-previous position-absolute" @click="nextPrev">
                                         <span class="my-prev-hook"></span>
                                     </div>
                                     <!-- next -->
-                                    <div class="my-next position-absolute">
+                                    <div class="my-next position-absolute" @click="nextPrev">
                                         <span class="my-next-hook"></span>
                                     </div>
                                     <!-- immagini interne -->
                                     <div class="inner">
-                                        <div class="my-thumbnail">
+                                        <div  v-for="item in items"  class="my-thumbnail">
                                             <img class="img-fluid"
-                                                src="{{items[0].url}}"
-                                                alt="Thumbnail of .... picture">
+                                            :src="item.url"
+                                            alt="Thumbnail of .... picture">
                                         </div>
                                     </div>
                                     <!-- /immagini interne -->
